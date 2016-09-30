@@ -1,0 +1,9 @@
+p
+	= message.content
+- @all_events = Message.state_machine.events
+- @all_events.each do |event|
+	- if message.state_events.include?(event.name) 
+ 		p = link_to event.human_name, change_state_path(message.id, event.name)
+ 	- else
+ 		p =	event.human_name
+hr

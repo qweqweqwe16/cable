@@ -1,0 +1,25 @@
+ru:
+  activerecord:
+    state_machines: 
+      message:
+        state: 
+          states:
+            new:          'Новый заказ'
+            confirmed:    'Подтвержденный'
+            canceled:     'Отмененный'
+            sold:         'Проданный'
+            delivered:    'Доставляется' 
+          events:
+            confirmed:    'Подтвердить'
+            cancel:       'Отменить заказ'
+            open_order:   'Открыть'
+            ship:         'Доставлен'
+            delivery:     'Доставка'
+            annulled:     'Отменить доставку'
+            paid:         'Оплатить'
+        payment_state: 
+          states:
+            paid:         'Оплачено'
+            is_not_paid:  'Неоплачено'  
+          events:
+            #paid:         'Оплатить              

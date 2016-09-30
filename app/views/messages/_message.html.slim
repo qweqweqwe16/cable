@@ -1,0 +1,14 @@
+/= render 'messages/state', message: message
+p
+	= message.content
+- @all_events = Message.state_machine.events
+- @all_events.each do |event|
+	- if message.state_events.include?(event.name) 
+ 		= link_to event.human_name, change_state_path(message.id, event.name)
+ 		= " | "
+ 	- else
+ 		= event.human_name
+ 		= " | "
+p
+	= time_ago_in_words(message.created_at) 		
+hr
